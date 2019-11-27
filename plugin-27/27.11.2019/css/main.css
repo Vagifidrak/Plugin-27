@@ -2,6 +2,7 @@
   padding: 10px;
   width: 198px;
   margin: 100px;
+  overflow-y: scroll;
 }
 
 .bottomWrap {

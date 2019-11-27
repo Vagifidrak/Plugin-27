@@ -1,7 +1,7 @@
 $(function ($) {
     $.fn.searchDrop = function () {
         var AllList = [];
-
+        var self = this;
         let div = $("<div></div>")
         div.addClass("wrapDiv")
         for (var searchItem of arguments) {
@@ -30,12 +30,20 @@ $(function ($) {
             var newList = filterList(letter, AllList)
             $(".wrapDiv").empty()
             for (var searchItem of newList) {
-
                 console.log(searchItem)
                 div.html(div.html() + "<p>" + searchItem + "</p>")
             }
+            $('.wrapDiv p').on('click', function () {
+                var ptext = $(this).text()
+                $(self).val(ptext)
+                $(this).parent().fadeOut()
+            })
         })
-
+        $('.wrapDiv p').on('click', function () {
+            var ptext = $(this).text()
+            $(self).val(ptext)
+            $(this).parent().fadeOut()
+        })
     }
 }(jQuery))
 
@@ -50,5 +58,5 @@ function filterList(letter, list) {
             newList.push(myList)
         }
     }
-    return newList
+    return newList;
 }
