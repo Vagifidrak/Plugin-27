@@ -27,10 +27,15 @@ $(function ($) {
         })
         this.on('keyup', function () {
             var letter = $(this).val()
-            filterList(letter, AllList)
-            console.log(filterList(letter, AllList));
+            var newList = filterList(letter, AllList)
+            $(".wrapDiv").empty()
+            for (var searchItem of newList) {
 
+                console.log(searchItem)
+                div.html(div.html() + "<p>" + searchItem + "</p>")
+            }
         })
+
     }
 }(jQuery))
 
@@ -41,8 +46,9 @@ function ParsePx(mesafe) {
 function filterList(letter, list) {
     var newList = [];
     for (var myList of list) {
-        if (myList.toUpperCase().startsWith(letter.toUpperCase())) {}
-        newList.push(myList)
+        if (myList.toUpperCase().startsWith(letter.toUpperCase())) {
+            newList.push(myList)
+        }
     }
     return newList
 }

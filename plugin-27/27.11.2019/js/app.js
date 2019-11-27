@@ -1,1 +1,1 @@
-$("#cities").searchDrop("Baki","Naxçıvan","Gəncə","Novxanı","Nardaran","Bilgeh","Marneuli","New-York","Amsarabad")
+$("#cities").searchDrop("Baki","Naxçıvan","Quba","Qusar","Gəncə","Novxanı","Nardaran","Bilgeh","Marneuli","New-York","Amsarabad")
